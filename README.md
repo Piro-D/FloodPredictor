@@ -5,16 +5,24 @@ How to initialize this project
 
 3. Install required dependencies [pip install -r requirements.txt]
 
-4. train the model by inserting this into the terminal [python -u "c:\Users\Jason\Desktop\floodPredictor_M\src\Backend\train.py"] 
+4. train the model by inserting this into the terminal [python -u .\src\Backend\train.py] 
 
-flood_pipeline is the primary file used to predict
-you can call it like this ["predict_flood_for_kelurahan(kelurahan)"]
 
-predict.py is used to test with manually inputed values
+Explanation of each folder
+- flood_Pipeline.py is the main pipeline for the flood prediction. You can call it by calling this in a python file ["predict_flood_for_kelurahan(kelurahan)"]
+- api_service deals with the connection between the front end and the back end
+- bmkg_fetcher handles the communication between the program and the opensource BMKG API
+- predict.py is used for testing by inserting manual values to the model
+- preprocess.py is used to process inputs so it can be read by the model
+- runPipeline,py is also used for testing, but this time we just need to insert the kelurahan name. (You can see various kelurahan name in AreaCodes.csv)
+- train.py is the main file that creates the model. It uses the flood_training_data_kelurahan_use.csv as training data
 
-To test with values given from an API, use runPipeline.py
+Note: You can see the accuracy of the model by running train.py
 
-preprocess.py is used to handle the values so it can be read by other files
 
-The rest are util files with functions realted to the BMKG API
-
+Pipeline of this program:
+1. User selects a kelurahan
+2. Kelurahan is translated to it's corresponding ADM4 code
+3. The ADM4 code is then used to call the BMKG API to receive forecast data on that kelurahan
+4. The forecast data is then fed to the model that has been trained on historical flood data
+5. The model returns the flood probability of that kelurahan in various time stamps.

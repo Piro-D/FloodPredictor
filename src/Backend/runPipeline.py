@@ -1,6 +1,6 @@
 from flood_pipeline import predict_flood_for_kelurahan
 
-kelurahan = "kalideres"
+kelurahan = "Kalideres"
 results = predict_flood_for_kelurahan(kelurahan)
 
 print("\n================ FLOOD PREDICTION RESULT ================\n")
