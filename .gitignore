@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+*.pkl
+.flood_xgb_model.pkl
+logs/
+.env
+.vscode/
+.ipynb_checkpoints/
+fix.py
+TestAPI.py

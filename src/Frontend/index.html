@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flood Predictor MVP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Flood Predictor</h1>
+        <div class="dropdowns">
+            <label for="province">Province:</label>
+            <select id="province">
+                <option value="">Select Province</option>
+            </select>
+
+            <label for="city">City/Regency:</label>
+            <select id="city" disabled>
+                <option value="">Select City</option>
+            </select>
+
+            <label for="district">District:</label>
+            <select id="district" disabled>
+                <option value="">Select District</option>
+            </select>
+
+            <label for="subdistrict">Subdistrict:</label>
+            <select id="subdistrict" disabled>
+                <option value="">Select Subdistrict</option>
+            </select>
+
+            <button id="checkFlood">Check Flood Prediction</button>
+        </div>
+
+        <div id="results"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
