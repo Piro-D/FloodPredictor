@@ -26,3 +26,9 @@ Pipeline of this program:
 3. The ADM4 code is then used to call the BMKG API to receive forecast data on that kelurahan
 4. The forecast data is then fed to the model that has been trained on historical flood data
 5. The model returns the flood probability of that kelurahan in various time stamps.
+
+
+To test the front end
+1. Run Api service.py
+2. Go to index.html
+3. Click the Go Live button on the bottom right
