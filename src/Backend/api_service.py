@@ -82,8 +82,16 @@ def predict_route():
         canonical_kelurahan = row["kelurahan"]
         print(f"Resolved {kelurahan_in!r} -> canonical {canonical_kelurahan!r}, adm4={adm4}", flush=True)
 
+        # optional test override: allow forcing a rain level from client (int)
+        force_rain = payload.get("force_rain_level")
+        try:
+            if force_rain is not None:
+                force_rain = int(force_rain)
+        except Exception:
+            force_rain = None
+
         # call pipeline with canonical kelurahan
-        results = predict_flood_for_kelurahan(canonical_kelurahan.lower())
+        results = predict_flood_for_kelurahan(canonical_kelurahan.lower(), force_rain_level=force_rain)
 
     except ValueError as e:
         # lookup failure or suggestions — return 400 so client can fix input

@@ -52,7 +52,7 @@ def map_weather_to_rain_level(desc: str) -> int:
 # ===================================================
 # MAIN PIPELINE
 # ===================================================
-def predict_flood_for_kelurahan(kelurahan_name: str):
+def predict_flood_for_kelurahan(kelurahan_name: str, force_rain_level: int = None):
 
     kel = kelurahan_name.lower().strip()
 
@@ -79,7 +79,7 @@ def predict_flood_for_kelurahan(kelurahan_name: str):
             "wd": slot.get("wd_deg"),
             "tcc": slot.get("tcc"),
             "visibility": slot.get("vs_text"),
-            "rain_level": map_weather_to_rain_level(slot["weather_desc"]),
+            "rain_level": (force_rain_level if force_rain_level is not None else map_weather_to_rain_level(slot["weather_desc"])),
             "sea_level": 0.5,
             "tide_height": 0.5,
         }

@@ -19,11 +19,13 @@ document.getElementById("checkFlood").addEventListener("click", async () => {
 
     resultsDiv.textContent = "Requesting backend prediction...";
 
+    const forceHeavy = document.getElementById("forceHeavyRain")?.checked;
+
     try {
         const resp = await fetch("http://localhost:5000/predict", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ kelurahan: subdistrict, province, city, district })
+            body: JSON.stringify({ kelurahan: subdistrict, province, city, district, force_rain_level: forceHeavy ? 3 : undefined })
         });
 
         if (!resp.ok) {
@@ -104,12 +106,14 @@ async function loadAreas() {
 // helper to get data arrays from loaded tree
 function getCitiesForProvince(province) {
     const tree = window.__AREA_TREE || [];
-    const p = tree.find(x => x.province === province);
+    const target = (province || "").toString().trim();
+    const p = tree.find(x => ((x.province||"").toString().trim() === target));
     return p ? p.cities : [];
 }
 function getDistrictsForProvinceCity(province, city) {
-    const cities = getCitiesForProvince(province);
-    const c = cities.find(x => x.city === city);
+    const cities = getCitiesForProvince(province) || [];
+    const targetCity = (city || "").toString().trim();
+    const c = cities.find(x => ((x.city||"").toString().trim() === targetCity));
     return c ? c.districts : [];
 }
 
@@ -122,6 +126,7 @@ provinceSelect.addEventListener("change", () => {
     subdistrictSelect.disabled = true;
 
     const cities = getCitiesForProvince(provinceSelect.value);
+    console.debug("province change ->", { selected: provinceSelect.value, citiesCount: (cities || []).length });
     if (!cities || cities.length === 0) {
         citySelect.disabled = true;
         return;
