@@ -1,45 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Flood Predictor MVP</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <div class="container">
-        <h1>Flood Predictor</h1>
-        <div class="dropdowns">
-            <label for="province">Province:</label>
-            <select id="province">
-                <option value="">Select Province</option>
-            </select>
 
-            <label for="city">City/Regency:</label>
-            <select id="city" disabled>
-                <option value="">Select City</option>
-            </select>
+<div class="container">
 
-            <label for="district">District:</label>
-            <select id="district" disabled>
-                <option value="">Select District</option>
-            </select>
+    <!-- LEFT PANEL -->
+    <div class="left-panel">
+        <header class="header">
+            <h1>🌊 Flood Predictor</h1>
+            <p class="subtitle">Early flood risk estimation</p>
+        </header>
 
-            <label for="subdistrict">Subdistrict:</label>
-            <select id="subdistrict" disabled>
-                <option value="">Select Subdistrict</option>
-            </select>
+        <div class="form-card">
+            <div class="field">
+                <label for="province">Province</label>
+                <select id="province">
+                    <option value="">Select Province</option>
+                </select>
+            </div>
 
-            <button id="checkFlood">Check Flood Prediction</button>
-            <label style="margin-left:12px; display:inline-flex; align-items:center;">
-                <input type="checkbox" id="forceHeavyRain" style="margin-right:6px;" />
-                Force Heavy Rain (test)
-            </label>
+            <div class="field">
+                <label for="city">City / Regency</label>
+                <select id="city" disabled>
+                    <option value="">Select City</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="district">District</label>
+                <select id="district" disabled>
+                    <option value="">Select District</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="subdistrict">Subdistrict</label>
+                <select id="subdistrict" disabled>
+                    <option value="">Select Subdistrict</option>
+                </select>
+            </div>
+
+            <div class="actions">
+                <button id="checkFlood">Check Flood Prediction</button>
+
+                <label class="checkbox">
+                    <input type="checkbox" id="forceHeavyRain"/>
+                    Force Heavy Rain (test)
+                </label>
+            </div>
         </div>
-
-        <div id="results"></div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- RIGHT PANEL -->
+    <div id="results" class="results right-panel"></div>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

@@ -1,59 +1,228 @@
+/* ===== RESET ===== */
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* ===== BACKGROUND ===== */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #e8f4f8;
+    margin: 0;
+    min-height: 100vh;
+
+    background-image: url("./assets/JakartaCity.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    margin: 0;
+
+    position: relative;
 }
 
+/* Overlay for readability */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(4px);
+    z-index: 0;
+}
+
+/* ===== MAIN CONTAINER ===== */
 .container {
-    background-color: #fff;
-    padding: 25px 40px;
-    border-radius: 12px;
-    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
-    width: 400px;
+    position: relative;
+    z-index: 1;
+
+    width: 1100px;
+    max-width: 96vw;
+
+    background: rgba(255, 255, 255, 0.88);
+    border-radius: 18px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+    padding: 24px;
+
+    display: flex;
+    gap: 28px;
 }
 
-h1 {
+/* ===== LEFT PANEL ===== */
+.left-panel {
+    width: 420px;
+    flex-shrink: 0;
+}
+
+.header {
     text-align: center;
-    color: #0077b6;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #0369a1;
+}
+
+.subtitle {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #64748b;
+}
+
+/* ===== FORM CARD ===== */
+.form-card {
+    background: #f8fafc;
+    border-radius: 14px;
+    padding: 22px;
+    border: 1px solid #e5e7eb;
+}
+
+.field {
+    margin-bottom: 18px;
 }
 
 label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
     display: block;
-    margin-top: 15px;
-    font-weight: bold;
+    margin-bottom: 6px;
 }
 
-select, button {
+/* DROPDOWNS */
+select {
     width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    font-size: 14px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+    font-size: 15px;
+}
+
+select:disabled {
+    background: #f1f5f9;
+    color: #94a3b8;
+}
+
+/* ACTIONS */
+.actions {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 button {
-    background-color: #0077b6;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 20px;
+    padding: 14px;
+    border-radius: 12px;
     border: none;
+    background: linear-gradient(135deg, #0284c7, #0369a1);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 button:hover {
-    background-color: #005f86;
+    box-shadow: 0 10px 24px rgba(2,132,199,0.35);
 }
 
-#results {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #f1f9ff;
-    border-radius: 8px;
-    min-height: 50px;
+.checkbox {
+    font-size: 13px;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ===== RIGHT PANEL ===== */
+.right-panel {
+    flex: 1;
+    background: rgba(248, 250, 252, 0.92);
+    border-radius: 14px;
+    padding: 18px;
+
+    overflow-y: auto;
+    max-height: 75vh;
+}
+
+.right-panel:empty::before {
+    content: "Prediction results will appear here →";
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* ===== PREDICTION CARDS ===== */
+.prediction-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.prediction-card {
+    background: white;
+    border-radius: 14px;
+    padding: 16px 18px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+    border-left: 6px solid #94a3b8;
+}
+
+.prediction-card.safe {
+    border-left-color: #22c55e;
+    background: #f0fdf4;
+}
+
+.prediction-card.warning {
+    border-left-color: #facc15;
+    background: #fffbeb;
+}
+
+.prediction-card.danger {
+    border-left-color: #ef4444;
+    background: #fef2f2;
+}
+
+.prediction-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.prediction-date {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.prediction-badge {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 999px;
+    color: white;
+}
+
+.badge-safe {
+    background: #22c55e;
+}
+
+.badge-warning {
+    background: #facc15;
+    color: #78350f;
+}
+
+.badge-danger {
+    background: #ef4444;
+}
+
+.prediction-body {
+    font-size: 14px;
+    color: #334155;
+    line-height: 1.6;
+}
+
+.prediction-body span {
+    font-weight: 600;
 }
