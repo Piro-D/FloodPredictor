@@ -1,10 +1,8 @@
-/* ===== RESET ===== */
 * {
     box-sizing: border-box;
     font-family: "Segoe UI", Tahoma, sans-serif;
 }
 
-/* ===== BACKGROUND ===== */
 body {
     margin: 0;
     min-height: 100vh;
@@ -21,7 +19,7 @@ body {
     position: relative;
 }
 
-/* Overlay for readability */
+
 body::before {
     content: "";
     position: absolute;
@@ -31,7 +29,7 @@ body::before {
     z-index: 0;
 }
 
-/* ===== MAIN CONTAINER ===== */
+
 .container {
     position: relative;
     z-index: 1;
@@ -48,7 +46,7 @@ body::before {
     gap: 28px;
 }
 
-/* ===== LEFT PANEL ===== */
+
 .left-panel {
     width: 420px;
     flex-shrink: 0;
@@ -71,7 +69,7 @@ body::before {
     color: #64748b;
 }
 
-/* ===== FORM CARD ===== */
+
 .form-card {
     background: #f8fafc;
     border-radius: 14px;
@@ -91,7 +89,7 @@ label {
     margin-bottom: 6px;
 }
 
-/* DROPDOWNS */
+
 select {
     width: 100%;
     padding: 12px 14px;
@@ -105,7 +103,7 @@ select:disabled {
     color: #94a3b8;
 }
 
-/* ACTIONS */
+
 .actions {
     margin-top: 20px;
     display: flex;
@@ -136,7 +134,7 @@ button:hover {
     gap: 8px;
 }
 
-/* ===== RIGHT PANEL ===== */
+
 .right-panel {
     flex: 1;
     background: rgba(248, 250, 252, 0.92);
@@ -153,7 +151,7 @@ button:hover {
     font-size: 14px;
 }
 
-/* ===== PREDICTION CARDS ===== */
+
 .prediction-grid {
     display: flex;
     flex-direction: column;

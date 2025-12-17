@@ -95,7 +95,7 @@ document.getElementById("checkFlood").addEventListener("click", async () => {
     }
 });
 
-/* ===== AREA LOADING (ASLI, TIDAK DIUBAH) ===== */
+
 
 async function loadAreas() {
     resultsDiv.textContent = "Loading area list...";

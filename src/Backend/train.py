@@ -11,14 +11,12 @@ from preprocess import fit_preprocess
 # ================================================
 df = pd.read_csv("data/flood_training_data_kelurahan_use.csv")
 
-# Normalize kelurahan early
 df["subdistrict_name"] = (
     df["subdistrict_name"]
     .str.lower()
     .str.strip()
     .str.replace(r"\s+", " ", regex=True)
 )
-
 
 
 
@@ -68,7 +66,7 @@ model = XGBClassifier(
 
 model.fit(X_train, y_train)
 
-# Get feature names AFTER preprocessing
+
 feature_names = X.columns.tolist()
 
 

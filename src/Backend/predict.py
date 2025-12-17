@@ -47,13 +47,13 @@ def predict_flood(input_df: pd.DataFrame):
     - probability (float)
     """
 
-    # 1️⃣ Clean raw input
+    # Clean raw input
     input_df = clean_input(input_df)
 
-    # 2️⃣ Apply SAME preprocess as training
+    # Apply SAME preprocess as training
     X = transform_preprocess(input_df)
 
-    # 3️⃣ Predict
+    # Predict
     prediction = model.predict(X)
     probability = model.predict_proba(X)[:, 1]
 
@@ -65,13 +65,13 @@ def predict_flood(input_df: pd.DataFrame):
 # ===================================================
 if __name__ == "__main__":
     sample = pd.DataFrame([{
-        "adm4": "31.73.06.1004",        # STRING is OK
+        "adm4": "31.73.06.1004",       
         "local_datetime": "2024-01-02 15:00:00",
         "subdistrict_name": "kembangan utara",
         "t": 30,
         "hu": 95,
         "ws": 20,
-        "wd": 135,                      # degrees (not text)
+        "wd": 135,                    
         "tcc": 95,
         "visibility": 1000,
         "rain_level": 3,
