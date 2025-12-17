@@ -1,4 +1,7 @@
-.venv/
+
+# Commented to have placeholder folder
+# .venv/
+
 __pycache__/
 *.pyc
 logs/
