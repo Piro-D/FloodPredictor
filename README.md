@@ -24,9 +24,9 @@ The third step may take a while
 
 ======================================================================================================
 
-To test the front end
+To run the MVP
 1. Run api_service.py [python -u .\src\Backend\api_service.py] 
-2. Go to index.html
+2. Go to index.html in ./src/Frontend
 3. Click the Go Live button on the bottom right
 
 Note: The "Go Live" will only appear if you have already installed the Live Server Extension in VScode
