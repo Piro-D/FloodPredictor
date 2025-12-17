@@ -41,7 +41,7 @@ If you have Installed Live Server Extension
 If you don't have Live Server Extension
 1. Run api_service.py [python -u .\src\Backend\api_service.py] 
 2. Create a second terminal
-3. Type this query in the second terminal [cd "src\Frontend"]DDDDDDD
+3. Type this query in the second terminal [cd "src\Frontend"]
 4. Then this query in the second terminal [python -m http.server 5500]
 5. Open http://localhost:5500/index.html in browser
 
