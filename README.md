@@ -20,6 +20,7 @@ Install all required python packages, by running this query in the terminal [pip
 Install the live server extension in VScode if it isnt already installed.
 Link : https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
 
+
 5. Train the AI Model
 Train the model by running this command in the terminal [python -u .\src\Backend\train.py] 
 
@@ -31,10 +32,21 @@ The third step may take a while
 ======================================================================================================
 
 To run the MVP
+
+If you have Installed Live Server Extension
 1. Run api_service.py [python -u .\src\Backend\api_service.py] 
 2. Go to index.html in ./src/Frontend
 3. Click the Go Live button on the bottom right
 
+If you don't have Live Server Extension
+1. Run api_service.py [python -u .\src\Backend\api_service.py] 
+2. Create a second terminal
+3. Type this query in the second terminal [cd "src\Frontend"]DDDDDDD
+4. Then this query in the second terminal [python -m http.server 5500]
+5. Open http://localhost:5500/index.html in browser
+
+
+Note: Press Ctrl+C in the terminal to close the servers if you want
 Note: The "Go Live" will only appear if you have already installed the Live Server Extension in VScode
 Note: The Force Heavy Rain Button can be used to test what happens if there is heavy rain.
 Note: If it stills displays "Failed to Load Areas" in the right panel, try refreshing and make sure the api_service.py is running
