@@ -25,11 +25,13 @@ The third step may take a while
 ======================================================================================================
 
 To test the front end
-1. Run Api service.py [python -u .\src\Backend\api_service.py] 
+1. Run api_service.py [python -u .\src\Backend\api_service.py] 
 2. Go to index.html
 3. Click the Go Live button on the bottom right
 
 Note: The "Go Live" will only appear if you have already installed the Live Server Extension in VScode
+Note: The Force Heavy Rain Button can be used to test what happens if there is heavy rain.
+Note: If it stills displays "Failed to Load Areas" in the right panel, try refreshing and make sure the api_service.py is running
 
 
 ======================================================================================================
