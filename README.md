@@ -1,3 +1,9 @@
+Group:
+Jason Nicholas - 2802411411
+Yohannes Adrian - 2802404721
+Aaron Leonardi - 2802413404
+Nicholas Lowell - 2802401676
+
 ====================================================================================================
 Project Initilization (Very Important)
 
