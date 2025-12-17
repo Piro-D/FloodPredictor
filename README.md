@@ -2,13 +2,13 @@
 Project Initilization (Very Important)
 
 1. Create a Virtual Environment
-Create a new virtual enviroment in the project directory, run [python -m venv .venv] in the terminal
+Create a new virtual enviroment in the project directory, run this query in the terminal [python -m venv .venv] 
     
 2. Virtual Environment Activation
-Activate the new virtual enviroment by running [.\.venv\Scripts\Activate] in the terminal
+Activate the new virtual enviroment by running this query in the terminal [.\.venv\Scripts\Activate]
 
 3. Install Required Dependencies
-Install all required python packages, by running [pip install -r requirements.txt] in the terminal
+Install all required python packages, by running this query in the terminal [pip install -r requirements.txt] 
 
 4. Install the Live Server Extension (If not already installed)
 Install the live server extension in VScode if it isnt already installed.
@@ -25,7 +25,7 @@ The third step may take a while
 ======================================================================================================
 
 To test the front end
-1. Run Api service.py
+1. Run Api service.py [python -u .\src\Backend\api_service.py] 
 2. Go to index.html
 3. Click the Go Live button on the bottom right
 
